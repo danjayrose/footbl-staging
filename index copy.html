@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#57ac57" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Missing 11 - Daily football wordle game</title>
+    <meta name="description" content="Can you name all Missing 11 players that started this football match? A new lineup is available each day in this football wordle game.">
+
+    <!-- FB Meta Tags -->
+    <meta property="og:url" content="https://www.missing11.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Missing 11 - Daily football wordle game">
+    <meta property="og:image" content="https://www.missing11.com/social-icon.png?v=1">
+    <meta property="og:description" content="Can you name all Missing 11 players that started this football match? A new lineup is available each day in this football wordle game.">
+
+    <!-- AdinPlay Ads -->
+    <script>
+      window.aiptag = window.aiptag || {cmd: []};
+      aiptag.cmd.player = aiptag.cmd.player || [];
+    
+      //CMP tool settings
+      aiptag.cmp = {
+        show: true,
+        position: "centered",  //centered, bottom
+        button: true,
+        buttonText: "Privacy settings",
+        buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+      }
+    
+      aiptag.cmd.player.push(function() {
+        aiptag.adplayer = new aipPlayer({
+          AD_WIDTH: 960,
+          AD_HEIGHT: 540,
+          AD_DISPLAY: 'default', //default, fullscreen, center, fill
+          LOADING_TEXT: 'loading advertisement',
+          PREROLL_ELEM: function(){return document.getElementById('preroll')},
+          AIP_COMPLETE: function (evt)  {
+            /*******************
+             ***** WARNING *****
+             *******************
+             Please do not remove the PREROLL_ELEM
+             from the page, it will be hidden automaticly.
+             If you do want to remove it use the AIP_REMOVE callback.
+            */
+            alert("Preroll Ad Completed: " + evt);
+          },
+          AIP_REMOVE: function ()  {
+            // Here it's safe to remove the PREROLL_ELEM from the page if you want. But it's not recommend.
+          }
+        });
+      });
+    
+      function show_preroll() {
+        //check if the adslib is loaded correctly or blocked by adblockers etc.
+        if (typeof aiptag.adplayer !== 'undefined') {
+          aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
+        } else {
+          //Adlib didnt load this could be due to an adblocker, timeout etc.
+          //Please add your script here that starts the content, this usually is the same script as added in AIP_COMPLETE or AIP_REMOVE.
+          alert("Ad Could not be loaded, load your content here");
+        }
+      }
+        </script>
+      <script async src="//api.adinplay.com/libs/aiptag/pub/FTF/footbl5.com/tag.min.js"></script>
+    <!-- AdinPlay Ads -->
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5RZWT5M');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZWHB26SFV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GZWHB26SFV');
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RZWT5M"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>Missing 11 is a football wordle style starting lineup guessing game. Please enable javascript to play.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    
+  </body>
+</html>
